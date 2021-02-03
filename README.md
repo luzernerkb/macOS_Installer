@@ -2,7 +2,7 @@
 
 This public repo helps installing some macOS tools for frontend- & app development and is maintained by the LUKB DevLab team.
 
-## Requirements
+## Requirements
 
 - macOS hardware
 - macOS user account with admin privileges
