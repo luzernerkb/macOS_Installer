@@ -64,14 +64,10 @@ fi
 
 
 
-echo -e "${YELLOW}TODO:${NC} First, please install Xcode, Apple Configurator + Transporter from Apple AppStore!"
+echo -e "${YELLOW}TODO:${NC} First, please install Xcode, Apple Configurator2 + Transporter from Apple AppStore!"
 # no solution to automate AppStore installs
 read -p "Press any key to continue... " -n1 -s
 echo -e "\n"
-info "Installing Xcode command line tools with ${BOLDWHITE}'sudo xcode-select --install'${NC}..."
-if [[ ${DEBUG_FLAG} -ne 1 ]]; then
-    sudo xcode-select --install
-fi
 
 info "Installing Homebrew..."
 which brew  2>&1 >/dev/null

@@ -8,6 +8,12 @@ This public repo helps installing some macOS tools for frontend- & app developme
 - macOS user account with admin privileges
 - Terminal
 - Internet connection
+- Xcode-Tools installed:
+
+```bash
+# Open a Terminal and install Xcode Tools for git
+    sudo xcode-select --install
+```
 
 ## Installation
 
@@ -17,7 +23,10 @@ To use the main `macOS_Installer.sh` script, do the following steps:
 # Clone this repo
 git clone https://github.com/luzernerkb/macOS_Installer.git
 
-# Start the main script an follow the on-screen instructions
+# Change directory
+cd macOS_Installer
+
+# Run the main script an follow the on-screen instructions
 ./macOS_Installer.sh
 
 ```
