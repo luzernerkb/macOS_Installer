@@ -34,10 +34,10 @@ read -p "Press any key to continue... " -n1 -s
 echo -e "\n"
 
 # Setup the local user
-#./setupUser.sh
+./setupUser.sh
 
 # Setup Homebrew and install software
-#./setupHomebrew.sh $1
+./setupHomebrew.sh $1
 
 # Setup Git
 ./setupGit.sh $1
