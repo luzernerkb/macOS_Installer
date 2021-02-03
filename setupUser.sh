@@ -12,6 +12,11 @@ USER_CONFIG_FILE="${HOME}/.lukb.user.conf"
 source helperScripts/colors.sh
 source helperScripts/outputHelper.sh
 
+if [[ -f ${USER_CONFIG_FILE} ]]; then
+    info "Skipping configuration, since there is already a file called '${USER_CONFIG_FILE}'"
+    exit 1
+fi
+
 blueLines "setupUser"
 todo "To configure all the tools correctly, you need to provide some information about you:"
 
