@@ -15,6 +15,8 @@ source helperScripts/outputHelper.sh
 
 blueLines "Configuring GIT"
 
+info "Setting user to global git config"
+
 if [[ -f ${USER_CONFIG_FILE} ]]; then
    source ${USER_CONFIG_FILE}
    

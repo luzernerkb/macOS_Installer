@@ -88,8 +88,6 @@ bi maven
 #bi brew-cask
 bcia adoptopenjdk
 
-exit 1
-
 info "Installing development tools..."
 bcia iterm2
 bcia sublime-text
