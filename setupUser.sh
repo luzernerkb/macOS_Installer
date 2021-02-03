@@ -5,14 +5,14 @@
 # Author: Tom Enz, 2021
 #
 #
-USER_CONFIG_FILE="${HOME}/.lukb.user.conf"
+USER_CONFIG_FILE="~/.lukb.user.conf"
 #
 # Helper Functions
 #
 source helperScripts/colors.sh
 source helperScripts/outputHelper.sh
 
-if [[ -f ${USER_CONFIG_FILE} ]]; then
+if [[ -f ${USER_CONFIG_FILE} ]]; then
     info "Skipping configuration, since there is already a file called '${USER_CONFIG_FILE}'"
     exit 1
 fi
