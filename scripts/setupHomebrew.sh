@@ -8,8 +8,8 @@
 #
 # Helper Functions
 #
-source ../helper/colors.sh
-source ../helper/outputHelper.sh
+source helper/colors.sh
+source helper/outputHelper.sh
 
 while getopts d flag
 do

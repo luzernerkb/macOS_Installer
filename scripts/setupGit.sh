@@ -10,7 +10,6 @@ GIT_CONFIG_FILE="${HOME}/.lukb.user.conf"
 #
 # Helper Functions
 #
-pwd
 source helper/colors.sh
 source helper/outputHelper.sh
 
