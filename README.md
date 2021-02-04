@@ -19,7 +19,7 @@ This public repo helps installing some macOS tools for frontend- & app developme
 
 ## Installation
 
-To use the main `macOS_Installer.sh` script, do the following steps:
+To use the main `install.sh` script, do the following steps:
 
 ```bash
 # Clone this repo
