@@ -10,8 +10,9 @@ GIT_CONFIG_FILE="${HOME}/.lukb.user.conf"
 #
 # Helper Functions
 #
-source ../helper/colors.sh
-source ../helper/outputHelper.sh
+pwd
+source helper/colors.sh
+source helper/outputHelper.sh
 
 blueLines "Configuring GIT"
 
