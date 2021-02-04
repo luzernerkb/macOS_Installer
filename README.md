@@ -2,6 +2,8 @@
 
 This public repo helps installing some macOS tools for frontend- & app development and is maintained by the LUKB DevLab team.
 
+![DevLab-Logo](./_assets/devlab_logo.png)
+
 ## Requirements
 
 - macOS hardware
@@ -27,7 +29,7 @@ git clone https://github.com/luzernerkb/macOS_Installer.git
 cd macOS_Installer
 
 # Run the main script an follow the on-screen instructions
-./macOS_Installer.sh
+./install.sh
 
 ```
 

@@ -9,8 +9,8 @@ USER_CONFIG_FILE="$HOME/.lukb.user.conf"
 #
 # Helper Functions
 #
-source helperScripts/colors.sh
-source helperScripts/outputHelper.sh
+source ../helper/colors.sh
+source ../helper/outputHelper.sh
 
 if [[ -f ${USER_CONFIG_FILE} ]]; then
     info "Skipping configuration, since there is already a file called '${USER_CONFIG_FILE}'"

@@ -1,9 +1,8 @@
 #!/bin/bash
 #
-# macOS Software Installer Script 
+# install.sh - macOS Software Installer Script 
 #
 # Author: Tom Enz, 2021
-# Usage: /bin/bash -c "$(curl -fsSL https://enz.lu/macos-installer)"
 #
 #
 HOMEDIR="${HOME}"
@@ -13,9 +12,9 @@ FILE_PREFIX=".lukb"
 #
 # Helper Functions
 #
-source helperScripts/colors.sh
-source helperScripts/outputHelper.sh
-source helperScripts/asciiDevLabLogo.sh
+source helper/colors.sh
+source helper/outputHelper.sh
+source helper/asciiDevLabLogo.sh
 
 while getopts d flag
 do
@@ -34,13 +33,13 @@ read -p "Press any key to continue... " -n1 -s
 echo -e "\n"
 
 # Setup the local user
-./setupUser.sh
+./scripts/setupUser.sh
 
 # Setup Homebrew and install software
-./setupHomebrew.sh $1
+./scripts/setupHomebrew.sh $1
 
 # Setup Git
-./setupGit.sh $1
+./scripts/setupGit.sh $1
 
 info "${GREEN}DevLab macOS Installer finished.${NC}"
 todo "After the installation you need to continue with DevLab Config Tool and/or restart your computer and use the tools."
