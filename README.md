@@ -36,3 +36,5 @@ cd macOS_Installer
 ## 🚧 Work in progress
 
 - [ ] `setupUser.sh` check if config file already exists, if yes load it
+- [ ] Tool to dump the OS'x settings or load them again (Or to automate Firewall on ...)
+- [ ] Network-Share helper for Sidemenu
