@@ -98,7 +98,7 @@ if [[ $? -eq 0 ]]; then
         networksetup -setwebproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
         networksetup -setsecurewebproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
         networksetup -setftpproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
-        networksetup -setsocksproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
+        networksetup -setsocksfirewallproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
         
 
         # Start CNTLM
