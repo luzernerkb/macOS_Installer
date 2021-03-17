@@ -41,6 +41,10 @@ if [[ $? -eq 0 ]]; then
         cp $CNTLM_TEMPLATE_CONF $CNTLM_TEMPLATE_HOMEDIR_CONF
         cp ${CNTLM_TEMPLATE_HOMEDIR_CONF} ${CNTLM_CONF}
 
+        if [[ -f ${PROXY_EXPORTS_HOMEDIR_CONF} ]]; then
+            rm -rf PROXY_EXPORTS_HOMEDIR_CONF 2>&1 >/dev/null
+        fi
+
         echo "export http_proxy=\"http://localhost:3128\"" >> "${PROXY_EXPORTS_HOMEDIR_CONF}"
         echo "export https_proxy=\${http_proxy}" >> "${PROXY_EXPORTS_HOMEDIR_CONF}"
         echo "export ftp_proxy=\${http_proxy}" >> "${PROXY_EXPORTS_HOMEDIR_CONF}"
