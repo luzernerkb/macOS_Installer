@@ -10,6 +10,9 @@ PROXY_EXPORTS_HOMEDIR_CONF="${HOME}/.lukb.proxy.exports.conf"
 CNTLM_TEMPLATE_CONF="templates/.lukb.template.cntlm.conf"
 CNTLM_TEMPLATE_HOMEDIR_CONF="${HOME}/.lukb.template.cntlm.conf"
 CNTLM_CONF="/usr/local/etc/cntlm.conf"
+DEFAULT_WIFI_NAME="Wi-Fi"
+DEFAULT_CNTLM_HOST="127.0.0.1"
+DEFAULT_CNTLM_PORT="3128"
 #
 # Helper Functions
 #
@@ -82,13 +85,35 @@ if [[ $? -eq 0 ]]; then
             error "Something went wrong with your NTLM password hashes, please check '${CNTLM_CONF}' manually!"
         fi
 
-        info "${GREEN}CNTLM installed and configured.${NC}"
+
+        # Add Proxy
+        info "Adding proxy host '${DEFAULT_CNTLM_HOST}' + port '${DEFAULT_CNTLM_PORT}' to macOS system settings."
+        info "The macOS default is called ${BOLDWHITE}'${DEFAULT_WIFI_NAME}'${NC} "
+        info "You have the following networkservices available:"
+        networksetup -listallnetworkservices
+
+        read -p "Please enter the name of the networkservices above: " CHOSEN_NETWORK_SERVICE_NAME
+
+        info "You have chosen '${CHOSEN_NETWORK_SERVICE_NAME}'. Trying to add proxy settings to it..."
+        networksetup -setwebproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
+        networksetup -setsecurewebproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
+        networksetup -setftpproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
+        networksetup -setsocksproxy ${CHOSEN_NETWORK_SERVICE_NAME} ${DEFAULT_CNTLM_HOST} ${DEFAULT_CNTLM_PORT}
+        
 
         # Start CNTLM
-        todo "Now start CNTLM manually with: ${BOLDWHITE}'sudo brew services start cntlm'${NC}..."
-        info "CNTLM should then run under 'http://localhost:3128'"
+        todo "Now we'll start CNTLM with: ${BOLDWHITE}'sudo brew services start cntlm'${NC}. Please enter your password..."
 
+        sudo brew services start cntlm
 
+        netstat -an | grep 3128 2>&1 >/dev/null
+        if [[ $? -eq 0 ]]; then
+            info "CNTLM should now run under 'http://localhost:3128'"
+            info "${GREEN}CNTLM installed and configured.${NC}"
+        else
+            todo "CNTLM was not started ... Please check with ${BOLDWHITE}'sudo brew services status cntlm'${NC}. And continue manually"
+            info "${GREEN}CNTLM installed and configured, but not yet started${NC}"
+        fi
     else
         error "No USER_CONFIG_FILE found in '${USER_CONFIG_FILE}'"
 
