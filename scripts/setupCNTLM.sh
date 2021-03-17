@@ -5,10 +5,10 @@
 # Author: Tom Enz, 2021
 #
 #
-USER_CONFIG_FILE="$HOME/.lukb.user.conf"
-PROXY_EXPORTS_HOMEDIR_CONF"$HOME/.lukb.proxy.exports.conf"
+USER_CONFIG_FILE="${HOME}/.lukb.user.conf"
+PROXY_EXPORTS_HOMEDIR_CONF"${HOME}/.lukb.proxy.exports.conf"
 CNTLM_TEMPLATE_CONF="templates/.lukb.template.cntlm.conf"
-CNTLM_TEMPLATE_HOMEDIR_CONF="$HOME/.lukb.template.cntlm.conf"
+CNTLM_TEMPLATE_HOMEDIR_CONF="${HOME}/.lukb.template.cntlm.conf"
 CNTLM_CONF="/usr/local/etc/cntlm.conf"
 #
 # Helper Functions
@@ -41,14 +41,14 @@ if [[ $? -eq 0 ]]; then
         cp $CNTLM_TEMPLATE_CONF $CNTLM_TEMPLATE_HOMEDIR_CONF
         cp ${CNTLM_TEMPLATE_HOMEDIR_CONF} ${CNTLM_CONF}
 
-        echo "export http_proxy='http://localhost:3128'" >> $PROXY_EXPORTS_HOMEDIR_CONF
-        echo "export https_proxy=${http_proxy}" >> $PROXY_EXPORTS_HOMEDIR_CONF
-        echo "export ftp_proxy=${http_proxy}" >> $PROXY_EXPORTS_HOMEDIR_CONF
-        echo "export HTTP_PROXY=${http_proxy}" >> $PROXY_EXPORTS_HOMEDIR_CONF
-        echo "export HTTPS_PROXY=${http_proxy}" >> $PROXY_EXPORTS_HOMEDIR_CONF
-        echo "export FTP_PROXY=${http_proxy}" >> $PROXY_EXPORTS_HOMEDIR_CONF
-        echo "export no_proxy=localhost,127.0.0.1,.lucorp.ch" >> $PROXY_EXPORTS_HOMEDIR_CONF
-        echo "export NO_PROXY=${no_proxy}" >> $PROXY_EXPORTS_HOMEDIR_CONF
+        echo "export http_proxy='http://localhost:3128'" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
+        echo "export https_proxy=${http_proxy}" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
+        echo "export ftp_proxy=${http_proxy}" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
+        echo "export HTTP_PROXY=${http_proxy}" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
+        echo "export HTTPS_PROXY=${http_proxy}" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
+        echo "export FTP_PROXY=${http_proxy}" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
+        echo "export no_proxy=localhost,127.0.0.1,.lucorp.ch" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
+        echo "export NO_PROXY=${no_proxy}" >> "${$PROXY_EXPORTS_HOMEDIR_CONF}"
 
 
         grep ${PROXY_EXPORTS_HOMEDIR_CONF} $HOME/.zshrc 2>&1 >/dev/null
