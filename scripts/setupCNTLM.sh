@@ -6,7 +6,7 @@
 #
 #
 USER_CONFIG_FILE="${HOME}/.lukb.user.conf"
-PROXY_EXPORTS_HOMEDIR_CONF"${HOME}/.lukb.proxy.exports.conf"
+PROXY_EXPORTS_HOMEDIR_CONF="${HOME}/.lukb.proxy.exports.conf"
 CNTLM_TEMPLATE_CONF="templates/.lukb.template.cntlm.conf"
 CNTLM_TEMPLATE_HOMEDIR_CONF="${HOME}/.lukb.template.cntlm.conf"
 CNTLM_CONF="/usr/local/etc/cntlm.conf"
