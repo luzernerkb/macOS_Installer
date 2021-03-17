@@ -6,7 +6,6 @@
 #
 #
 USER_CONFIG_FILE="${HOME}/.lukb.user.conf"
-GIT_CONFIG_FILE="${HOME}/.lukb.user.conf"
 #
 # Helper Functions
 #
