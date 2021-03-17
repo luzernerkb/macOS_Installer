@@ -38,6 +38,10 @@ if [[ $? -eq 0 ]]; then
 
     if [[ -f ${CNTLM_TEMPLATE_CONF} ]]; then
         info "Copying cntlm template to your local homedir '${HOME}' ..."
+        if [[ -f ${CNTLM_TEMPLATE_HOMEDIR_CONF} ]]; then
+            rm -rf CNTLM_TEMPLATE_HOMEDIR_CONF 2>&1 >/dev/null
+        fi
+
         cp $CNTLM_TEMPLATE_CONF $CNTLM_TEMPLATE_HOMEDIR_CONF
         cp ${CNTLM_TEMPLATE_HOMEDIR_CONF} ${CNTLM_CONF}
 
