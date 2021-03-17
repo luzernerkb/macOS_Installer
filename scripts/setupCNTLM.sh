@@ -39,14 +39,14 @@ if [[ $? -eq 0 ]]; then
 
     if [[ -f ${PROXY_EXPORTS_CONF} ]]; then
         info "Copying proxy export to your local homedir '${HOME}' ..."
-        cp ${PROXY_EXPORTS_CONF} ${PROXY_EXPORTS_HOMEDIR_CONF}
+        cp $PROXY_EXPORTS_CONF $PROXY_EXPORTS_HOMEDIR_CONF
         echo "source ${PROXY_EXPORTS_HOMEDIR_CONF}" >> "${HOME}/.zshrc"
 
     fi
 
     if [[ -f ${CNTLM_TEMPLATE_CONF} ]]; then
         info "Copying cntlm template to your local homedir '${HOME}' ..."
-        cp ${CNTLM_TEMPLATE_CONF} ${CNTLM_TEMPLATE_HOMEDIR_CONF}
+        cp $CNTLM_TEMPLATE_CONF $CNTLM_TEMPLATE_HOMEDIR_CONF
         cp ${CNTLM_TEMPLATE_HOMEDIR_CONF} ${CNTLM_CONF}
     fi
 
