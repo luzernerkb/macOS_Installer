@@ -22,6 +22,14 @@ This public repo helps installing some macOS tools for frontend- & app developme
 To use the main `install.sh` script, do the following steps:
 
 ```bash
+# Open Terminal
+
+# Create new folder called 'Projects'
+mkdir -p ~/Projects
+
+# Navigate in the new folder
+cd ~/Projects
+
 # Clone this repo
 git clone https://github.com/luzernerkb/macOS_Installer.git
 
